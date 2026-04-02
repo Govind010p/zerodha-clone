@@ -31,7 +31,7 @@ function Navbar() {
         <div className="container px-3 ps-md-5 ">
           <Link className="navbar-brand" to="/" onClick={closeNavbar}>
             <img
-              src="../../public/media/images/logo.svg"
+              src="/media/images/logo.svg"
               alt="logo"
               className="img-fluid"
               style={{ maxWidth: "140px" }}
