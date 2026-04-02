@@ -64,7 +64,7 @@ function Signup() {
         <div className="col-md-6 col-12">
           <img
             className="w-100 ps-md-5 py-md-5 p-2"
-            src="../../../public/media/images/signup.png"
+            src="/media/images/signup.png"
             alt="signup png "
           />
         </div>
