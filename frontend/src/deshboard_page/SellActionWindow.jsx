@@ -17,7 +17,7 @@ const SellActionWindow = ({ uid }) => {
     if (!uid) return;
 
     axios
-      .get(`http://localhost:3002/api/holding/getQty/${uid}`, {
+      .get(`https://zerodha-clone-lkju.onrender.com/api/holding/getQty/${uid}`, {
         withCredentials: true,
       })
       .then((res) => {
