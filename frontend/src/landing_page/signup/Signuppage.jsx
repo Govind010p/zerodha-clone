@@ -1,6 +1,6 @@
 import React from "react";
 import Signup from "./Signup";
-import DematAccount from "./demateAccount";
+import DematAccount from "./DemateAccount";
 import StepsOfDemat from "./stepsOfDemat";
 import DiffAccount from "./DiffAccount";
 import Openaccount from "../Openaccount";
