@@ -7,7 +7,7 @@ function Order() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/orders/allOrders", {
+      .get("https://zerodha-clone-lkju.onrender.com/api/orders/allOrders", {
         withCredentials: true,
       })
       .then((res) => {
