@@ -40,7 +40,7 @@ export const GeneralContextProvider = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/watchlist/getWatchlistData", {
+      .get("https://zerodha-clone-lkju.onrender.com/api/watchlist/getWatchlistData", {
         withCredentials: true,
       })
       .then((res) => setStockData(res.data))
