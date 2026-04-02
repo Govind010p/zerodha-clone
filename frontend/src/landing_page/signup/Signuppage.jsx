@@ -1,7 +1,7 @@
 import React from "react";
 import Signup from "./Signup";
 import DematAccount from "./DemateAccount";
-import StepsOfDemat from "./stepsOfDemat";
+import StepsOfDemat from "./StepsOfDemat";
 import DiffAccount from "./DiffAccount";
 import Openaccount from "../Openaccount";
 
