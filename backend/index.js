@@ -31,7 +31,7 @@ require("./sockets/stockSocket")(io);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://zerodha-clone-web.onrender.com",
     credentials: true,
   }),
 );
