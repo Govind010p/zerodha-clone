@@ -28,7 +28,7 @@ function NavbarDeshboard() {
           <div className="div d-flex flex-row">
             <Link className="navbar-brand" to="/kite" onClick={closeNavbar}>
               <img
-                src="../../public/media/images/logokite.svg"
+                src="/media/images/logokite.svg"
                 alt="logo"
                 className="img-fluid"
                 style={{ maxWidth: "40px" }}
