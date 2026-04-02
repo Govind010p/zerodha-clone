@@ -15,14 +15,14 @@ function Signuppage() {
         <div className="row mx-md-0 mx-1">
           <div className="col-md-6 col-12">
             <DematAccount
-              image={"../../../public/media/images/stocks-acop.svg"}
+              image={"/media/images/stocks-acop.svg"}
               demateType={"Stock"}
               demateDiscription={"Invest in all exchange-listed securities"}
             ></DematAccount>
             </div>
             <div className="col-md-6 col-12">
             <DematAccount
-              image={"../../../public/media/images/mf-acop.svg"}
+              image={"/media/images/mf-acop.svg"}
               demateType={"Mutual funds"}
               demateDiscription={"Invest in commission-free direct mutual funds"}
             ></DematAccount>
@@ -31,14 +31,14 @@ function Signuppage() {
         <div className="row mx-md-0 mx-1">
           <div className="col-md-6 col-12">
             <DematAccount
-              image={"../../../public/media/images/ipo-acop.svg"}
+              image={"/media/images/ipo-acop.svg"}
               demateType={"IPO"}
               demateDiscription={"Apply to the latest IPOs instantly via UPI"}
             ></DematAccount>
             </div>
             <div className="col-md-6 col-12">
             <DematAccount
-              image={"../../../public/media/images/fo-acop.svg"}
+              image={"/media/images/fo-acop.svg"}
               demateType={"Futures & options"}
               demateDiscription={"Hedge and mitigate market risk through simplified F&O trading"}
             ></DematAccount>
