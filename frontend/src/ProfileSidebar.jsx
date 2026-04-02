@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./assets/css/profileSidebar.css";
+import { useNavigate } from "react-router-dom";
 
 function ProfileSidebar({ isOpen, closeSidebar }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -31,7 +33,7 @@ function ProfileSidebar({ isOpen, closeSidebar }) {
       setUser(null);
       closeSidebar();
 
-      window.location.href = "/login";
+      navigate("/login");
     } catch {
       console.error("Logout failed");
     }
@@ -90,14 +92,14 @@ function ProfileSidebar({ isOpen, closeSidebar }) {
           <>
             <button
               className="sidebar-btn btn-blue"
-              onClick={() => (window.location.href = "/login")}
+              onClick={() => navigate("/login")}
             >
               Login
             </button>
 
             <button
               className="sidebar-btn btn-outline-blue"
-              onClick={() => (window.location.href = "/signup")}
+              onClick={() => navigate("/signup")}
             >
               Signup
             </button>
