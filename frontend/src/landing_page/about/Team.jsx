@@ -13,7 +13,7 @@ function Team() {
           <div className="col-1 ms-md-5"></div>
           <div className="col-md-3 col-12 founder-profile text-center ">
             <img
-              src="../../../public/media/images/nithinKamath.jpg"
+              src="/media/images/nithinKamath.jpg"
               alt="founder of zerodha"
               className="founder-img founder-img-mobile"
             />
