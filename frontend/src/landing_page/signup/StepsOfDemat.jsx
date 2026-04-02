@@ -11,7 +11,7 @@ function StepsOfDemat() {
         <div className="row px-md-5">
           <div className="col-md-6 col-12 ps-md-5 pe-md-5 ms-md-5 mt-md-5">
             <div className="div">
-              <img src="/media/images/tutorial.svg" alt="" />
+              <img src="/media/images/tutorial.svg" alt="tutorial image " />
             </div>
           </div>
           <div className="col-md-5 col-12">
