@@ -8,7 +8,7 @@ function ProfileSidebar({ isOpen, closeSidebar }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/auth/me", {
+      .get("https://zerodha-clone-lkju.onrender.com/api/auth/me", {
         withCredentials: true,
       })
       .then((res) => {
@@ -24,7 +24,7 @@ function ProfileSidebar({ isOpen, closeSidebar }) {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3002/api/auth/logout",
+        "https://zerodha-clone-lkju.onrender.com/api/auth/logout",
         {},
         { withCredentials: true },
       );
