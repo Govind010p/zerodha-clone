@@ -38,7 +38,7 @@ function Signup() {
         setFormData({ username: "", email: "", password: "" });
 
         // Redirect to dashboard
-        window.location.href = "http://localhost:5173/kite";
+        window.location.href = "https://zerodha-clone-web.onrender.com/kite";
       } else { 
         setSuccess(false);
         setMessage(data.message || "Signup failed");
@@ -65,7 +65,7 @@ function Signup() {
           <img
             className="w-100 ps-md-5 py-md-5 p-2"
             src="/media/images/signup.png"
-            alt="signup png "
+            alt="signup png"
           />
         </div>
         <div className="col-1"></div>
