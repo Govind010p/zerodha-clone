@@ -13,7 +13,7 @@ const WatchlistActions = ({ uid }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/auth/me", {
+      .get("https://zerodha-clone-lkju.onrender.com/api/auth/me", {
         withCredentials: true,
       })
       .then((res) => {
