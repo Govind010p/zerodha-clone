@@ -1,0 +1,59 @@
+*{
+    color: #424242;
+}
+
+.nav-link{
+    margin-left : 40px;
+    font-weight: 400;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(89, 89, 89);
+    display: block;
+    margin-bottom: -10px;
+}
+
+.footer-links p{
+    color: black;
+    font-size: 1.1rem;
+}
+
+.termAndConditions p {
+        font-size: 0.7rem;
+}
+
+
+.profile-position{
+    position: relative;
+    left: 100px;
+}
+
+@media (max-width : 576px) {
+    .profile-position{
+        position: relative;
+        left: 190px;
+        top: -5px;
+        scale: 1.2;
+    }
+
+    .ham-burger{
+        position: relative;
+        left: -40px;
+    }
+}
+
+.custom-btn {
+  font-size: 0.8rem;
+  padding: 10px 16px;
+  border-radius: 50px; /* fully rounded (pill shape) */
+  background-color: #ffa200; /* purple color */
+  border: none;
+  color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #004289;
+  color: rgb(255, 248, 248);
+}

@@ -1,0 +1,38 @@
+.margin-amount{
+    font-size: 2rem;
+    margin-left: 6%;
+}
+
+.trade-head, .trade-head i{
+    color: #0c38d6;
+}
+
+.fs-less{
+    font-size: 0.9rem;
+}
+
+.img-logo{
+    width: 15%;
+    color: #0c38d6;
+}
+
+.fs-small{
+    font-size: 0.85rem;
+    color: #0cd659;
+}
+
+.loading-dots::after {
+  content: "...";
+  animation: dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
+
+.desk-w{
+    width : 240px;
+}

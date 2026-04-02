@@ -1,0 +1,29 @@
+.holding-container {
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profit {
+  color: rgb(16, 152, 16) !important;
+}
+
+.loss {
+  color: rgb(202, 7, 7) !important;
+}
+
+@media (max-width: 576px) {
+    
+  .display-none-mobile {
+    display: none;
+  }
+  .profit {
+    color: rgb(16, 152, 16) !important;
+  }
+
+  .loss {
+    color: rgb(202, 7, 7) !important;
+  }
+}

@@ -1,0 +1,20 @@
+.display-none-desktop{
+    display: none;
+}
+
+
+@media (max-width : 576px) {
+    .display-none-mobile {
+        display: none;
+    }
+
+    .display-on-mobile{
+        display: block;
+    }
+
+    .navbtn{
+        position: relative;
+        right: -90%;
+        bottom: -10px;
+    }
+}

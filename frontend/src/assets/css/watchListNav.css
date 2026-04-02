@@ -1,0 +1,202 @@
+.desktop-height {
+  height: 65px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sticky-at-top {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.page-content {
+  margin-top: 80px !important;
+}
+
+.page-content-watchlist {
+  margin-top: 130px !important;
+}
+
+.index-container-pc {
+  width: 50%;
+  height: 70px !important;
+  border: none !important;
+}
+
+.input-width {
+  width: 85%;
+  height: 40px;
+  padding-left: 15px;
+  border: 1px solid rgb(150, 147, 147);
+  border-radius: 10px;
+}
+
+.watchlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.watchlist-item {
+  position: relative;
+}
+
+.watchlist-actions {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.buy {
+  min-width: 36px;
+  height: 26px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 25px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.sell {
+  min-width: 36px;
+  height: 26px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 20px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.analitics {
+  min-width: 36px;
+  height: 26px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 15px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.delete {
+  min-width: 36px;
+  height: 26px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.more {
+  min-width: 36px;
+  height: 26px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 5px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.watchlist-scroll {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.flash-green {
+  animation: flashGreen 0.5s;
+}
+
+.flash-red {
+  animation: flashRed 0.5s;
+}
+
+@keyframes flashGreen {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #26a69a;
+  }
+}
+
+@keyframes flashRed {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #ef5350;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .index-container {
+    width: 46%;
+    height: 70px !important;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 1px solid rgb(216, 216, 216) !important;
+  }
+
+  .index-points {
+    font-size: 0.88rem;
+  }
+
+  .font-w-name {
+    font-weight: 620;
+  }
+
+  .page-content-watchlist {
+    margin-top: 20px !important;
+  }
+
+  .flash-green {
+    animation: flashGreen 0.5s;
+  }
+
+  .flash-red {
+    animation: flashRed 0.5s;
+  }
+
+  @keyframes flashGreen {
+    0% {
+      color: white;
+    }
+    100% {
+      color: #26a69a;
+    }
+  }
+
+  @keyframes flashRed {
+    0% {
+      color: white;
+    }
+    100% {
+      color: #ef5350;
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+.products-hero-para{
+    margin-right: 10%;
+    margin-top: 1rem;
+}
+
+.products-hero-para span{
+    color: rgb(4, 137, 167);
+} 
+
+@media (max-width: 576px){
+    .mobile-para-invest{
+       margin: 0%;
+    }
+}

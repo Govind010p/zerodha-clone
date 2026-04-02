@@ -1,0 +1,74 @@
+.form-control:focus,
+.form-control:hover {
+  box-shadow: none !important;
+  border-color: #ced4da !important; /* default border */
+  outline: none !important;
+}
+
+.fs-10{
+  font-size: 0.9rem;
+}
+
+.display-none-desktop{
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .mobile-bordered {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+  }
+
+  .para-fontsize-mobile{
+    font-size: 1rem;
+  }
+
+  .list-fontsize-mobile{
+    font-size: 0.95rem;
+  }
+
+  .subh4-fontsize-mobile{
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .flex-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .mobile-image-size{
+    width: 100%;
+  }
+
+  .font-7{
+    font-size: 1.3rem;
+  }
+
+  .fs-9{
+    font-size: 1.3rem !important;
+  }
+
+  .display-none-mobile{
+    display: none;
+  }
+
+  .fs-vs-p{
+    font-size: 0.7rem;
+    padding: "";
+  }
+
+  .display-blockon-mobile{
+    display: block;
+  }
+
+  .text-center-mobile{
+    text-align: center;
+  }
+
+  
+
+}

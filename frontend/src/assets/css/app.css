@@ -1,0 +1,24 @@
+/* apps.css */
+
+.apps-container {
+  min-height: 100vh;
+}
+
+/* Center on desktop */
+@media (min-width: 768px) {
+  .apps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Top on mobile */
+@media (max-width: 767px) {
+  .apps-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+}

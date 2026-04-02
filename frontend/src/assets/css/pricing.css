@@ -1,0 +1,48 @@
+.brockrage-image{
+    width : 60%;
+}
+
+table tr td {
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+
+.last-row td{
+    padding-bottom: 30px;
+    padding-top: 20px;
+}  
+
+.free-btn{
+    display: flex;
+    font-size: 0.9rem;
+    background-color: rgb(80, 252, 0) !important;
+    border: none;
+    width: 3.5rem;
+    height: 1.7rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2rem;
+}
+
+.very-small-para{
+    font-size: 0.55rem;
+    line-height: 0.6rem;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.charges-para{
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.charges-para-detail{
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}

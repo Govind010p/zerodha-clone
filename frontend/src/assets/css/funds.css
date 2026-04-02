@@ -1,0 +1,24 @@
+/* funds.css */
+
+.funds-container {
+  min-height: 100vh;
+}
+
+/* Default: center on desktop */
+@media (min-width: 768px) {
+  .funds-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Mobile: align to top */
+@media (max-width: 767px) {
+  .funds-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+}
