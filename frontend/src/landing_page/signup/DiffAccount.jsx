@@ -1,5 +1,5 @@
 import React from "react";
-import SingleTypeAcc from "./singleTypeAcc";
+import SingleTypeAcc from "./SingleTypeAcc";
 import "../../assets/css/signup.css";
 
 
