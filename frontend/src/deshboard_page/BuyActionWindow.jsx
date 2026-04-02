@@ -15,7 +15,7 @@ const BuyActionWindow = ({ uid }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/auth/me", {
+      .get("https://zerodha-clone-lkju.onrender.com/api/auth/me", {
         withCredentials: true,
       })
       .then((res) => {
@@ -52,7 +52,7 @@ const BuyActionWindow = ({ uid }) => {
       return;
     }
     axios.post(
-      "http://localhost:3002/api/orders/newBuyOrder",
+      "https://zerodha-clone-lkju.onrender.com/api/orders/newBuyOrder",
       {
         symbol: uid,
         qty: Number(stockQuantity),
