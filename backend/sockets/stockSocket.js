@@ -87,11 +87,14 @@ function connectFinnhub(io) {
   // Send to frontend users via Socket.io
   setInterval(() => {
     io.emit("priceUpdateBatch", latestPrices);
+    io.emit("priceUpdateHolding", latestPrices);
   }, 1000);
 
   setInterval(() => {
-    io.emit("priceUpdateHolding", latestPrices);
-  }, 1000);
+    if (ws.readyState === WebSocket.OPEN) {
+       ws.ping();
+    }
+  }, 30000);
 
 setInterval(async () => {
   try {
@@ -102,9 +105,10 @@ setInterval(async () => {
   }
 }, 60000);
 
-  ws.on("close", () => {
-    console.log("Finnhub connection closed");
-  });
+ ws.on("close", () => {
+  console.log("Finnhub connection closed. Reconnecting...");
+  setTimeout(() => connectFinnhub(io), 3000);
+});
 
   ws.on("error", (err) => {
     console.error("Finnhub error:", err.message);
