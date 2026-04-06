@@ -52,7 +52,7 @@ const SellActionWindow = ({ uid }) => {
       }
 
       const res = await axios.post(
-        "http://localhost:3002/api/orders/newSellOrder",
+        "https://zerodha-clone-lkju.onrender.com/api/orders/newSellOrder",
         {
           symbol: uid,
           qty: Number(stockQuantity),
