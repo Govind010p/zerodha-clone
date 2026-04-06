@@ -2,13 +2,13 @@ const User = require("../model/UsersModel");
 const { createSecretToken } = require("../Util/SecretToken");
 const bcrypt = require("bcryptjs");
 
-exports.getMe = async(req, res) => {
-    try{
-        const user = await User.findById(req.user.id).select("-password");
-        res.json(user);
-    } catch(error) {
-        res.status(500).json({ message: "Server error at getMe" });
-    }
+exports.getMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: "Server error at getMe" });
+  }
 };
 
 module.exports.Signup = async (req, res) => {
@@ -35,9 +35,10 @@ module.exports.Signup = async (req, res) => {
     const token = createSecretToken(user._id);
 
     res.cookie("token", token, {
-     httpOnly: true,
-     secure: true,      
-     sameSite: "None",    
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     res.status(201).json({
@@ -49,14 +50,11 @@ module.exports.Signup = async (req, res) => {
         username: user.username,
       },
     });
-
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
-
-
 
 module.exports.Login = async (req, res) => {
   try {
@@ -84,9 +82,9 @@ module.exports.Login = async (req, res) => {
     const token = createSecretToken(user._id);
 
     res.cookie("token", token, {
-     httpOnly: true,
-     secure: true,      
-     sameSite: "None",    
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
     });
 
     res.status(200).json({
@@ -98,7 +96,6 @@ module.exports.Login = async (req, res) => {
         username: user.username,
       },
     });
-
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Server error" });
@@ -106,23 +103,23 @@ module.exports.Login = async (req, res) => {
 };
 
 // Logout logic
-module.exports.Logout = async (req, res)=> {
-    try{
-      res.clearCookie("token", {
-        httpOnly: true,
-        secure: true,
-        sameSite: "None",
-      });
+module.exports.Logout = async (req, res) => {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
 
-      return res.status(200).json({
-        success : true,
-        message : "logged out successfully!",
-      });
-    } catch (error){
-      console.error(error);
-      res.status(500).json({
-        success : false,
-        message : "Logout failed "
-      });
-    }
+    return res.status(200).json({
+      success: true,
+      message: "logged out successfully!",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Logout failed ",
+    });
+  }
 };

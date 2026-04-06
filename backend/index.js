@@ -19,9 +19,13 @@ const server = http.createServer(app);
 // Socket Setup
 const io = new Server(server, {
   cors: {
-    origin: "https://zerodha-clone-web.onrender.com",
+    origin: ["https://zerodha-clone-web.onrender.com", "http://localhost:5173"],
     credentials: true,
   },
+  transports: ["websocket", "polling"],
+  allowEIO3: true, 
+  pingTimeout: 60000,
+  pingInterval: 25000,
 });
 
 // import the socket logic
@@ -31,10 +35,7 @@ require("./sockets/stockSocket")(io);
 
 app.use(
   cors({
-    origin: [
-    "http://localhost:5173",
-    "https://zerodha-clone-web.onrender.com"
-  ],
+    origin: ["http://localhost:5173", "https://zerodha-clone-web.onrender.com"],
     credentials: true,
   }),
 );
