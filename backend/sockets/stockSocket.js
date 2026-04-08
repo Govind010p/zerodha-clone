@@ -66,7 +66,6 @@ function connectFinnhub(io) {
   });
 
   let latestPrices = {};
-  let latestIndexPoints = {};
 
   ws.on("message", (msg) => {
     try {
