@@ -1,9 +1,19 @@
-// socket.js
+// ✅ socket.js
 import { io } from "socket.io-client";
 
-const socket = io("https://zerodha-clone-lkju.onrender.com", {
-  withCredentials: true,
-  transports: ["websocket", "polling"], 
-});
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "https://zerodha-clone-lkju.onrender.com";
 
-export default socket;
+let socket = null;
+
+export const getSocket = () => {
+  if (!socket) {
+    socket = io(SOCKET_URL, {
+      withCredentials: true,
+      transports: ["websocket", "polling"],
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 2000,
+    });
+  }
+  return socket;
+};
