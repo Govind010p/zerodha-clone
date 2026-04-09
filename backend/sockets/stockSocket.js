@@ -17,7 +17,6 @@ const symbols = [
 ];
 
 function connectFinnhub(io) {
-  // ✅ Clear any existing intervals before reconnecting
   clearInterval(priceInterval);
   clearInterval(pingInterval);
   clearInterval(statusInterval);
@@ -26,7 +25,7 @@ function connectFinnhub(io) {
 
   ws.on("open", () => {
     console.log("Connected to Finnhub WebSocket");
-    reconnectDelay = 3000; // ✅ reset delay on successful connection
+    reconnectDelay = 3000; 
 
     symbols.forEach((symbol) => {
       ws.send(JSON.stringify({ type: "subscribe", symbol }));
@@ -46,7 +45,6 @@ function connectFinnhub(io) {
     }
   });
 
-  // ✅ Assign to variables so they can be cleared on reconnect
   priceInterval = setInterval(() => {
     io.emit("priceUpdateBatch", latestPrices);
     io.emit("priceUpdateHolding", latestPrices);
@@ -70,14 +68,13 @@ function connectFinnhub(io) {
   });
 
   ws.on("close", () => {
-    // ✅ Clear intervals immediately on close
     clearInterval(priceInterval);
     clearInterval(pingInterval);
     clearInterval(statusInterval);
 
     console.log(`Finnhub closed. Reconnecting in ${reconnectDelay / 1000}s...`);
     setTimeout(() => {
-      reconnectDelay = Math.min(reconnectDelay * 2, 60000); // ✅ max 60s backoff
+      reconnectDelay = Math.min(reconnectDelay * 2, 60000); // max 60s backoff
       connectFinnhub(io);
     }, reconnectDelay);
   });
