@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const connectDB = require("./config/db");
 
-connectDB();
+connectDB(); 
 
 // web socket code
 const http = require("http");
