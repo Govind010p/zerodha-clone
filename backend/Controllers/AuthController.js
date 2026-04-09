@@ -2,7 +2,7 @@ const User = require("../model/UsersModel");
 const { createSecretToken } = require("../Util/SecretToken");
 const bcrypt = require("bcryptjs");
 
-exports.getMe = async (req, res) => {
+module.exports.getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
