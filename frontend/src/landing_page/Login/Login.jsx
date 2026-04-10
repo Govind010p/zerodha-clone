@@ -41,6 +41,7 @@ function Login() {
         setSuccess(true);
         setMessage("Login successful! 🎉");
         setFormData({ email: "", password: "" });
+        sessionStorage.setItem("token", data.token);
 
         // Redirect to dashboard
         navigate("/kite", { replace: true });

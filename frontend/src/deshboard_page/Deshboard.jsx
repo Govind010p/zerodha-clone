@@ -15,7 +15,7 @@ function Deshboard() {
         withCredentials: true,
       })
       .then((res) => {
-        setUserinfo(res.data);
+        setUserinfo(res.data.user);
       })
       .catch((err) => {
         console.log(err);

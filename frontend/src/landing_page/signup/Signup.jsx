@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import "../../assets/css/home.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 function Signup() {
+
+    const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -35,10 +40,11 @@ function Signup() {
       if (data.success) {
         setSuccess(true);
         setMessage("Signup successful! ");
+        sessionStorage.setItem("token", data.token);
         setFormData({ username: "", email: "", password: "" });
 
         // Redirect to dashboard
-        window.location.href = "https://zerodha-clone-web.onrender.com/kite";
+        navigate("/kite", { replace: true });
       } else {
         setSuccess(false);
         setMessage(data.message || "Signup failed");

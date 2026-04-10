@@ -13,6 +13,13 @@ import MainLayout from "./MainLayout";
 import DashboardLayout from "./DashboardLayout";
 import ScrollToTop from "./landing_page/ScrollToTop";
 
+import axios from "axios";
+axios.interceptors.request.use((c) => {
+  const t = sessionStorage.getItem("token");
+  if (t) c.headers["x-auth-token"] = t;
+  return c;
+});
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>

@@ -46,6 +46,7 @@ module.exports.Signup = async (req, res) => {
     res.status(201).json({
       success: true,
       message: "Signup successful",
+      token, 
       user: {
         id: user._id,
         email: user.email,
@@ -87,12 +88,13 @@ module.exports.Login = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      maxAge: 7 * 24 * 60 * 60 * 1000
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     res.status(200).json({
       success: true,
       message: "Login successful",
+      token,
       user: {
         id: user._id,
         email: user.email,
