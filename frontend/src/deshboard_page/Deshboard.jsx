@@ -65,14 +65,14 @@ function Deshboard() {
     return () => {
       socket.off("priceUpdateHolding");
     };
-  });
+  }, []);
 
   const totalInvest = allHoldings.reduce((sum, stock) => {
     return sum + stock.qty * stock.avg;
   }, 0);
 
   const currentValue = allHoldings.reduce((sum, stock) => {
-    return sum + stock.currentPrice * stock.qty;
+    return sum + (stock.currentPrice ?? stock.avg) * stock.qty;
   }, 0);
 
   const totalProfitOrLoss = currentValue - totalInvest;

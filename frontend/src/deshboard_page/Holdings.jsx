@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/css/holdings.css";
 import axios from "axios";
 import socket from "../socket";
@@ -35,24 +35,24 @@ function Holdings() {
     return () => {
       socket.off("priceUpdateHolding");
     };
-  });
+  },[]);
 
   const totalInvest = allHoldings.reduce((sum, stock) => {
     return sum + stock.qty * stock.avg;
   }, 0);
 
   const currentValue = allHoldings.reduce((sum, stock) => {
-    return sum + stock.currentPrice * stock.qty;
+    return sum + (stock.currentPrice ?? stock.avg) * stock.qty;
   }, 0);
 
   const today = new Date().toDateString();
   const daysPL = allHoldings.reduce((sum, stock) => {
+    const price = stock.currentPrice ?? stock.avg;
     const boughtToday = new Date(stock.buyDate).toDateString() === today;
-    const basePrice = boughtToday ? stock.avg : stock.prevClose;
-    const change = stock.currentPrice - basePrice;
+    const basePrice = boughtToday ? stock.avg : (stock.prevClose ?? stock.avg);
+    const change = price - basePrice;
     return sum + change * stock.qty;
   }, 0);
-
   const daysPLClass = daysPL >= 0 ? "profit" : "loss";
 
   const dayChange = (currentValue, daysPL) => {
@@ -140,7 +140,8 @@ function Holdings() {
           </thead>
           <tbody>
             {allHoldings.map((stock, index) => {
-              const curValue = stock.currentPrice * stock.qty;
+              const price = stock.currentPrice ?? stock.avg;
+              const curValue = price * stock.qty;
               const profit = curValue - stock.avg * stock.qty;
               const perShareProfit = profit / stock.qty;
               const netprofitPercent = (profit / (stock.avg * stock.qty)) * 100;
@@ -166,7 +167,7 @@ function Holdings() {
                     {stock.avg.toFixed(2)}
                   </td>
                   <td className="ps-md-3 py-md-2 border border-end-1 text-muted fw-normal">
-                    {stock.currentPrice.toFixed(2)}
+                    {(stock.currentPrice ?? stock.avg).toFixed(2)}
                   </td>
                   <td className="ps-md-3 py-md-2 border border-end-1 text-muted fw-normal">
                     {curValue.toFixed(2)}
@@ -197,7 +198,8 @@ function Holdings() {
       {/* for the mobile screen  */}
       <div className="d-md-none mt-3">
         {allHoldings.map((stock, index) => {
-          const curValue = stock.currentPrice * stock.qty;
+          const price = stock.currentPrice ?? stock.avg;
+          const curValue = price * stock.qty;
           const profit = curValue - stock.avg * stock.qty;
           const profClass = profit >= 0 ? "profit" : "loss";
           const dayclass =
