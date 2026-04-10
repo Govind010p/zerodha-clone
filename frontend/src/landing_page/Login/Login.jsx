@@ -48,9 +48,15 @@ function Login() {
         setSuccess(false);
         setMessage(data.message || "Login failed");
       }
-    } catch {
+    } catch (error) {
       setSuccess(false);
-      setMessage("Server error. Please try again later.");
+      if (error.response) {
+        //  Backend responded with 4xx/5xx — show actual message
+        setMessage(error.response.data.message || "Login failed");
+      } else {
+        //  Network error / server down
+        setMessage("Server error. Please try again later.");
+      }
     }
   };
 

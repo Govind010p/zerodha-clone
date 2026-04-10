@@ -39,13 +39,17 @@ function Signup() {
 
         // Redirect to dashboard
         window.location.href = "https://zerodha-clone-web.onrender.com/kite";
-      } else { 
+      } else {
         setSuccess(false);
         setMessage(data.message || "Signup failed");
       }
-    } catch {
+    } catch (error) {
       setSuccess(false);
-      setMessage("Server error. Please try again later.");
+      if (error.response) {
+        setMessage(error.response.data.message || "Signup failed");
+      } else {
+        setMessage("Server error. Please try again later.");
+      }
     }
   };
 
