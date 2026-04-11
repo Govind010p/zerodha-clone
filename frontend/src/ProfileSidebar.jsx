@@ -23,21 +23,33 @@ function ProfileSidebar({ isOpen, closeSidebar }) {
       });
   }, []);
 
-  const handleLogout = async () => {
-    try {
-      await axios.post(
-        "https://zerodha-clone-lkju.onrender.com/api/auth/logout",
-        {},
-        { withCredentials: true },
-      );
-      setUser(null);
-      closeSidebar();
+const handleLogout = async () => {
+  try {
+    await axios.post(
+      "https://zerodha-clone-lkju.onrender.com/api/auth/logout",
+      {},
+      { withCredentials: true }
+    );
+  } catch (err) {
+    console.error("Logout API failed:", err.response?.data || err.message);
+  } finally {
+    // ALWAYS run (even if API fails)
 
-      navigate("/login");
-    } catch {
-      console.error("Logout failed");
+    // clear frontend auth
+    setUser(null);
+
+    // remove token if used
+    sessionStorage.removeItem("token");
+
+    // disconnect socket 
+    if (window.socket) {
+      window.socket.disconnect();
     }
-  };
+
+    closeSidebar();
+    navigate("/login");
+  }
+};
 
   return (
     <div className={`profile-sidebar ${isOpen ? "open" : ""}`}>
