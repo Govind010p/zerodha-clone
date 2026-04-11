@@ -5,6 +5,7 @@
   width: 300px;
   padding: 28px 22px;
   border-radius: 10px;
+  z-index: 9999; /* VERY HIGH */
 
   /* Sharp Gradient */
   background: rgb(148, 177, 192);

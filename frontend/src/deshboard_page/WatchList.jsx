@@ -31,7 +31,7 @@ function WatchList() {
             placeholder="Search (infy bse, nifty fut, etc)"
             className="search input-width"
           />
-          <span className="count pe-md-0 pe-2 mt-2">{watchlist.length}/50</span>
+          <span className="count pe-md-0 pe-2 mt-2">{watchlist.length}/60</span>
         </div>
       </div>
       <div className="div border page-content-watchlist"></div>
