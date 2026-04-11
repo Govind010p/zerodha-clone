@@ -8,12 +8,48 @@ let priceInterval, pingInterval, statusInterval;
 let latestPrices = {};
 
 const symbols = [
-  "BINANCE:BTCUSDT", "BINANCE:ETHUSDT", "BINANCE:BNBUSDT", "BINANCE:SOLUSDT",
-  "AAPL", "MSFT", "GOOGL", "NVDA", "META", "AMZN", "TSLA", "AMD", "INTC",
-  "JPM", "BAC", "WFC", "GS", "MS", "C", "AXP", "BLK",
-  "WMT", "COST", "HD", "NKE", "MCD", "SBUX", "TGT", "LOW",
-  "JNJ", "PFE", "MRK", "ABBV", "LLY", "GILD", "TMO",
-  "XOM", "CVX", "BA", "CAT", "GE", "HON",
+  "BINANCE:BTCUSDT",
+  "BINANCE:ETHUSDT",
+  "BINANCE:BNBUSDT",
+  "BINANCE:SOLUSDT",
+  "AAPL",
+  "MSFT",
+  "GOOGL",
+  "NVDA",
+  "META",
+  "AMZN",
+  "TSLA",
+  "AMD",
+  "INTC",
+  "JPM",
+  "BAC",
+  "WFC",
+  "GS",
+  "MS",
+  "C",
+  "AXP",
+  "BLK",
+  "WMT",
+  "COST",
+  "HD",
+  "NKE",
+  "MCD",
+  "SBUX",
+  "TGT",
+  "LOW",
+  "JNJ",
+  "PFE",
+  "MRK",
+  "ABBV",
+  "LLY",
+  "GILD",
+  "TMO",
+  "XOM",
+  "CVX",
+  "BA",
+  "CAT",
+  "GE",
+  "HON",
 ];
 
 function connectFinnhub(io) {
@@ -25,7 +61,7 @@ function connectFinnhub(io) {
 
   ws.on("open", () => {
     console.log("Connected to Finnhub WebSocket");
-    reconnectDelay = 3000; 
+    reconnectDelay = 3000;
 
     symbols.forEach((symbol) => {
       ws.send(JSON.stringify({ type: "subscribe", symbol }));
@@ -37,7 +73,9 @@ function connectFinnhub(io) {
       const data = JSON.parse(msg);
       if (data.data) {
         data.data.forEach((trade) => {
-          latestPrices[trade.s] = trade.p;
+          if (trade.s && trade.p) {
+            latestPrices[trade.s] = trade.p;
+          }
         });
       }
     } catch (err) {

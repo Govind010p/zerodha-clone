@@ -14,18 +14,21 @@ const BuyActionWindow = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-lkju.onrender.com/api/auth/me", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        setUserinfo(res.data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setUserinfo(null);
-        setLoading(false);
-      });
+    const handleGetMe = async () => {
+      await axios
+        .get("https://zerodha-clone-lkju.onrender.com/api/auth/me", {
+          withCredentials: true,
+        })
+        .then((res) => {
+          setUserinfo(res.data.user);
+          setLoading(false);
+        })
+        .catch(() => {
+          setUserinfo(null);
+          setLoading(false);
+        });
+    };
+    handleGetMe();
   }, []);
 
   useEffect(() => {
@@ -44,27 +47,32 @@ const BuyActionWindow = ({ uid }) => {
     };
   }, [uid]);
 
-  const handleBuyClick = () => {
+  const handleBuyClick = async () => {
     if (loading) return;
 
     if (!userInfo) {
       navigate("/login");
       return;
     }
-    axios.post(
-      "https://zerodha-clone-lkju.onrender.com/api/orders/newBuyOrder",
-      {
-        symbol: uid,
-        qty: Number(stockQuantity),
-        OrderPrice: Number(stockPrice),
-        mode: "BUY",
-      },
-      {
-        withCredentials: true,
-      },
-    );
 
-    generalContext.closeBuyWindow();
+    try {
+      await axios.post(
+        "https://zerodha-clone-lkju.onrender.com/api/orders/newBuyOrder",
+        {
+          symbol: uid,
+          qty: Number(stockQuantity),
+          OrderPrice: Number(stockPrice),
+          mode: "BUY",
+        },
+        { withCredentials: true },
+      );
+
+      alert("Order placed successfully");
+      generalContext.closeBuyWindow();
+    } catch (err) {
+      console.error(err);
+      alert("Order failed");
+    }
   };
 
   const handleCancelClick = () => {

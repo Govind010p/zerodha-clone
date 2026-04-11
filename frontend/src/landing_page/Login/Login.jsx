@@ -35,7 +35,7 @@ function Login() {
         },
       );
 
-      const data = res.data;
+      const data = res.data ;
 
       if (data.success) {
         setSuccess(true);

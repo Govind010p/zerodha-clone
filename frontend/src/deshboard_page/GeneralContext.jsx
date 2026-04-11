@@ -39,17 +39,22 @@ export const GeneralContextProvider = (props) => {
   };
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-lkju.onrender.com/api/watchlist/getWatchlistData", {
-        withCredentials: true,
-      })
-      .then((res) => setStockData(res.data))
-      .catch((err) => console.log(err));
+    const handelWatchlist = async () => {
+      await axios
+        .get(
+          "https://zerodha-clone-lkju.onrender.com/api/watchlist/getWatchlistData",
+          {
+            withCredentials: true,
+          },
+        )
+        .then((res) => setStockData(res.data))
+        .catch((err) => console.log(err));
+    };
+    handelWatchlist();
   }, []);
 
   useEffect(() => {
-    socket.on("priceUpdateBatch", (data) => {
-      // update watchlist
+    const handler = (data) => {
       setStockData((prev) =>
         prev.map((stock) => {
           const newPrice = data[stock.symbol];
@@ -58,12 +63,12 @@ export const GeneralContextProvider = (props) => {
             : stock;
         }),
       );
+    };
 
-     
-    });
+    socket.on("priceUpdateBatch", handler);
 
     return () => {
-      socket.off("priceUpdateBatch");
+      socket.off("priceUpdateBatch", handler);
     };
   }, []);
 

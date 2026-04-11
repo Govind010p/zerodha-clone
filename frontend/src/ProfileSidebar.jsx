@@ -14,7 +14,7 @@ function ProfileSidebar({ isOpen, closeSidebar }) {
         withCredentials: true,
       })
       .then((res) => {
-        setUser(res.data);
+        setUser(res.data.user);
         setLoading(false);
       })
       .catch(() => {

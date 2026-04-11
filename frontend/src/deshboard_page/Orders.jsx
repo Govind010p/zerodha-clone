@@ -5,15 +5,28 @@ import axios from "axios";
 function Order() {
   const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://zerodha-clone-lkju.onrender.com/api/orders/allOrders", {
-        withCredentials: true,
-      })
-      .then((res) => {
+useEffect(() => {
+  const fetchOrders = async () => {
+    try {
+      const res = await axios.get(
+        "https://zerodha-clone-lkju.onrender.com/api/orders/allOrders",
+        { withCredentials: true }
+      );
+
+      if (Array.isArray(res.data)) {
         setOrders(res.data);
-      });
-  }, []);
+      } else {
+        console.warn("Invalid orders data:", res.data);
+        setOrders([]);
+      }
+
+    } catch (err) {
+      console.error("Error fetching orders:", err);
+      setOrders([]);
+    }
+  };
+  fetchOrders();
+}, []);
 
   return (
     <div className="container py-md-3">

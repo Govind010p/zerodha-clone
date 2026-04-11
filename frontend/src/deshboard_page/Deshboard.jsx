@@ -10,30 +10,44 @@ function Deshboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-lkju.onrender.com/api/auth/me", {
-        withCredentials: true,
-      })
-      .then((res) => {
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get(
+          "https://zerodha-clone-lkju.onrender.com/api/auth/me",
+          {
+            withCredentials: true,
+          },
+        );
         setUserinfo(res.data.user);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err);
-      });
+      }
+    };
+    fetchUser();
   }, []);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-lkju.onrender.com/api/holding/allHoldings", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res.data);
-        setAllHoldings(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const fetchHoldings = async () => {
+      try {
+        const res = await axios.get(
+          "https://zerodha-clone-lkju.onrender.com/api/holding/allHoldings",
+          { withCredentials: true },
+        );
+
+        // safety check
+        if (res.data && Array.isArray(res.data)) {
+          setAllHoldings(res.data);
+        } else {
+          console.warn("Unexpected holdings response:", res.data);
+          setAllHoldings([]);
+        }
+      } catch (err) {
+        console.error("Error fetching holdings:", err);
+        setAllHoldings([]);
+      }
+    };
+
+    fetchHoldings();
   }, []);
 
   useEffect(() => {
@@ -76,14 +90,16 @@ function Deshboard() {
   }, 0);
 
   const totalProfitOrLoss = currentValue - totalInvest;
-  const totalProfitPercent = (totalProfitOrLoss / totalInvest) * 100;
+  const totalProfitPercent = totalInvest
+    ? (totalProfitOrLoss / totalInvest) * 100
+    : 0;
   const isTotalProfitClass = totalProfitOrLoss >= 0 ? "profit" : "loss";
 
   return (
     <div className="div p-md-1 p-3">
       <div className="row py-md-4 px-md-4">
         <div className="div d-flex justify-content-between">
-          <h4 className="ms-md-3">Hi, {userInfo?.username}</h4>
+          <h4 className="ms-md-3">Hi, {userInfo?.username || "User"}</h4>
           <h6 className="border px-3 py-2 rounded-5 bg-gray text-secondary desk-w">
             Market Status :
             {loading ? (

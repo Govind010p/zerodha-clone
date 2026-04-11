@@ -16,16 +16,25 @@ const SellActionWindow = ({ uid }) => {
   useEffect(() => {
     if (!uid) return;
 
-    axios
-      .get(`https://zerodha-clone-lkju.onrender.com/api/holding/getQty/${uid}`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        setAvailableQty(res.data.qty);
-      })
-      .catch((err) => {
+    const fetchQty = async () => {
+      try {
+        const res = await axios.get(
+          `https://zerodha-clone-lkju.onrender.com/api/holding/getQty/${uid}`,
+          { withCredentials: true },
+        );
+
+        if (res.data && typeof res.data.qty === "number") {
+          setAvailableQty(res.data.qty);
+        } else {
+          console.warn("Invalid qty response:", res.data);
+          setAvailableQty(0);
+        }
+      } catch (err) {
         console.error("Error fetching quantity:", err);
-      });
+        setAvailableQty(0);
+      }
+    };
+    fetchQty();
   }, [uid]);
 
   useEffect(() => {
@@ -45,10 +54,9 @@ const SellActionWindow = ({ uid }) => {
   const handleSellClick = async () => {
     try {
       console.log("Sell clicked");
-
-      if (stockQuantity > availableQty) {
+      const safeQty = typeof availableQty === "number" ? availableQty : 0;
+      if (stockQuantity > safeQty) {
         alert("You don't have enough quantity to sell!");
-        return;
       }
 
       const res = await axios.post(
@@ -117,7 +125,7 @@ const SellActionWindow = ({ uid }) => {
       </div>
 
       <div className="buttons">
-        <span className="ms-0">Max Available Qty to sell : { availableQty }</span>
+        <span className="ms-0">Max Available Qty to sell : {availableQty}</span>
         <div>
           <button
             className="btn btn-blue btn-danger mt-2"

@@ -17,7 +17,7 @@ const WatchlistActions = ({ uid }) => {
         withCredentials: true,
       })
       .then((res) => {
-        setUserinfo(res.data);
+        setUserinfo(res.data.user);
         setLoading(false);
       })
       .catch(() => {

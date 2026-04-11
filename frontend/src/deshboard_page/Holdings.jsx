@@ -7,13 +7,26 @@ function Holdings() {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-lkju.onrender.com/api/holding/allHoldings", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        setAllHoldings(res.data);
-      });
+    const fetchHoldings = async () => {
+      try {
+        const res = await axios.get(
+          "https://zerodha-clone-lkju.onrender.com/api/holding/allHoldings",
+          { withCredentials: true },
+        );
+
+        if (Array.isArray(res.data)) {
+          setAllHoldings(res.data);
+        } else {
+          console.warn("Invalid holdings data:", res.data);
+          setAllHoldings([]);
+        }
+      } catch (err) {
+        console.error("Failed to fetch holdings:", err);
+        setAllHoldings([]);
+      }
+    };
+
+    fetchHoldings();
   }, []);
 
   useEffect(() => {
@@ -35,7 +48,7 @@ function Holdings() {
     return () => {
       socket.off("priceUpdateHolding");
     };
-  },[]);
+  }, []);
 
   const totalInvest = allHoldings.reduce((sum, stock) => {
     return sum + stock.qty * stock.avg;
@@ -60,7 +73,8 @@ function Holdings() {
     return (daysPL / previousValue) * 100;
   };
 
-  const dayPercent = dayChange(currentValue, daysPL).toFixed(2);
+  const dayPercent =
+    currentValue !== 0 ? dayChange(currentValue, daysPL).toFixed(2) : "0.00";
 
   const totalProfitOrLoss = currentValue - totalInvest;
   const totalProfitPercent = (totalProfitOrLoss / totalInvest) * 100;
