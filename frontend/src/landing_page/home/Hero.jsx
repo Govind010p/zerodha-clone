@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const navigate = useNavigate();
@@ -22,6 +23,15 @@ function Hero() {
         >
           Signup now
         </button>
+        <div className="div display-none-desktop display-on-mobile">
+          <Link
+            className="nav-link ms-2 mt-3"
+            to="/kite"
+            style={{ padding: "0" }}
+          >
+            <button className="btn custom-btn fs-6">Go to Dashboard </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

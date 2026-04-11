@@ -13,8 +13,7 @@ function Openaccount() {
         </p>
 
         <button
-          className="btn btn-primary mb-5 px-md-5 px-4 py-md-2 py-2"
-          style={{ width: "15%", margin: "0 auto" }}
+          className="btn btn-primary w-50 w-auto px-md-5 px-4 py-md-2 py-2 me-auto ms-auto"
           onClick={() => navigate("/signup")}  
         >
           Sign up now

@@ -37,26 +37,23 @@ function Navbar() {
               style={{ maxWidth: "140px" }}
             />
           </Link>
-          <div className="profile-position display-none-desktop">
-            <i
-              className="fa fa-user-circle p-0 fs-3 mt-2"
+            <button
+              ref={navbarTogglerRef}
+              className="navbar-toggler border-0 shadow-none ms-auto pe-0 ham-burger"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          <i
+              className="fa fa-user-circle ps-0 pb-1 fs-3 mt-2 me-3 display-none-desktop display-on-mobile"
               aria-hidden="true"
               onClick={() => setIsProfileOpen(true)}
             ></i>
-          </div>
-          {/* Hamburger */}
-          <button
-            ref={navbarTogglerRef}
-            className="navbar-toggler border-0 shadow-none ms-auto ham-burger"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
 
           {/* Menu */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -92,12 +89,16 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item ">
-                <Link className="nav-link" to="/kite" onClick={closeNavbar}  style={{padding:"0"}}>
-                  <button className="btn custom-btn">Go to Dashboard</button>
+                <Link
+                  className="nav-link ms-md-4  mt-md-0 ms-4 mt-2"
+                  to="/kite"
+                  onClick={closeNavbar}
+                  style={{ padding: "0" }}
+                >
+                  <button className="btn custom-btn">Go to Dashboard </button>
                 </Link>
               </li>
-
-              <li className="nav-item " >
+              <li className="nav-item display-none-mobile">
                 <div className="profile-position">
                   <i
                     className="fa fa-user-circle p-0 fs-3 mt-2"

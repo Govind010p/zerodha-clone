@@ -37,22 +37,22 @@ function WatchList() {
       <div className="div border page-content-watchlist"></div>
       <div className="mt-3 p-md-0 ps-2">
         <div className="mt-3 p-md-0 ps-2">
-          {stocks.length > 0 && (
-            <>
-              <div className="badge bg-primary mb-2 ms-2">Stocks</div>
-              <ul className="watchlist">
-                {stocks.map((stock, index) => (
-                  <WatchlistItem stock={stock} key={`stock-${index}`} />
-                ))}
-              </ul>
-            </>
-          )}
           {crypto.length > 0 && (
             <>
               <div className="badge bg-warning text-dark mb-2 ms-2">Crypto</div>
               <ul className="watchlist">
                 {crypto.map((stock, index) => (
                   <WatchlistItem stock={stock} key={`crypto-${index}`} />
+                ))}
+              </ul>
+            </>
+          )}
+          {stocks.length > 0 && (
+            <>
+              <div className="badge bg-primary mb-2 ms-2">Stocks</div>
+              <ul className="watchlist">
+                {stocks.map((stock, index) => (
+                  <WatchlistItem stock={stock} key={`stock-${index}`} />
                 ))}
               </ul>
             </>

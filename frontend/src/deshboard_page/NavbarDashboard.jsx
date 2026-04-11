@@ -51,17 +51,17 @@ function NavbarDeshboard() {
             <div className="div display-none-desktop display-on-mobile navbtn">
               <Link
                 className="mobile-nav-item border border-success fs-6 ms-2 disabled"
-                to=""
+                to="/kite/apps"
               >
                 Apps
               </Link>
-              <Link className="mobile-nav-item rounded-5  fs-4 ms-2" to="">
-                <i  
-                  className="fa fa-user-circle p-0 "
-                  aria-hidden="true"
-                  onClick={() => setIsProfileOpen(true)}
-                ></i>
-              </Link>
+                
+                  <i
+                    className="fa fa-user-circle p-0 fs-3 mt-2  "
+                    aria-hidden="true"
+                    onClick={() => setIsProfileOpen(true)}
+                  ></i>
+               
             </div>
           </div>
 

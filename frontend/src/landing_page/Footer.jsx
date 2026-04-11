@@ -7,7 +7,7 @@ function Footer() {
     <div style={{ backgroundColor: "#f5f5f5ff" }}>
       <div className="container p-5 mt-5 ">
         <div className="row mb-5">
-          <div className="col">
+          <div className="col-md-3 col-12 mb-md-0 mb-4">
             <img
               style={{ width: "50%", marginBottom: "8px", marginTop: "4px" }}
               src="../../public/media/images/logo.svg"
@@ -48,7 +48,7 @@ function Footer() {
               ></i>
             </a>
           </div>
-          <div className="col footer-links">
+          <div className="col-md-3 footer-links mb-md-0 mb-2">
             <p className="ms-0">Company</p>
             <a href="">About</a>
             <br />
@@ -65,7 +65,7 @@ function Footer() {
             <a href="">Open source</a>
             <br />
           </div>
-          <div className="col footer-links">
+          <div className=" footer-links col-md-3 footer-links mb-md-0 mb-2">
             <p className="ms-0">Support</p>
             <a href="">Contact us</a>
             <br />
@@ -84,7 +84,7 @@ function Footer() {
             <a href="">Downloads</a>
             <br />
           </div>
-          <div className="col footer-links ">
+          <div className="col-md-3 footer-links mb-md-0 mb-2footer-links ">
             <p className="ms-0">Account</p>
             <a href=""> Open demat account</a>
             <br />
