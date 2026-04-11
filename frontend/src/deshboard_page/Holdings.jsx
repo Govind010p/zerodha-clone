@@ -76,8 +76,9 @@ function Holdings() {
   const dayPercent =
     currentValue !== 0 ? dayChange(currentValue, daysPL).toFixed(2) : "0.00";
 
-  const totalProfitOrLoss = currentValue - totalInvest;
-  const totalProfitPercent = (totalProfitOrLoss / totalInvest) * 100;
+  const totalProfitOrLoss = (currentValue || 0) - (totalInvest || 0);
+  const totalProfitPercent =
+    totalInvest > 0 ? (totalProfitOrLoss / totalInvest) * 100 : 0;
   const isTotalProfitClass = totalProfitOrLoss >= 0 ? "profit" : "loss";
 
   return (
