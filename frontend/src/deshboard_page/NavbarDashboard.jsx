@@ -72,7 +72,7 @@ function NavbarDeshboard() {
             <ul className="navbar-nav ms-md-5 mb-2 mb-lg-0 px-md-3 py-md-1 w-75">
               <li className="nav-item px-md-3">
                 <Link className="nav-link" to="/kite" onClick={closeNavbar}>
-                  Deshboard
+                  Dashboard
                 </Link>
               </li>
               <li className="nav-item  px-md-3">
