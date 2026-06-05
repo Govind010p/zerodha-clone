@@ -50,7 +50,6 @@ function Holdings() {
     return () => socket.off("priceUpdateHolding", handler); // BUG FIX: pass handler ref so only THIS listener is removed
   }, []);
 
-  // ─── Summary calculations ───────────────────────────────────────────────────
 
   const totalInvest = allHoldings.reduce(
     (sum, stock) => sum + safe(stock.qty) * safe(stock.avg),
@@ -226,38 +225,55 @@ function Holdings() {
       {/* ── Mobile cards ── */}
       <div className="d-md-none mt-3">
         {allHoldings.map((stock, index) => {
-          const price = safe(stock.currentPrice ?? stock.avg);
-          const avg = safe(stock.avg);
-          const qty = safe(stock.qty);
+          const price    = safe(stock.currentPrice ?? stock.avg);
+          const avg      = safe(stock.avg);
+          const qty      = safe(stock.qty);
           const curValue = price * qty;
-          const profit = curValue - avg * qty;
+          const profit   = curValue - avg * qty;
+          const perShareProfit   = qty !== 0 ? profit / qty : 0;
+          const netprofitPercent = avg * qty !== 0 ? (profit / (avg * qty)) * 100 : 0;
           const profClass = profit >= 0 ? "profit" : "loss";
 
-          // FIX: was crashing because prevClose could be undefined
-          const prevClose = safe(stock.prevClose, avg);
-          const dayDiff = price - prevClose;
-          const dayclass = dayDiff >= 0 ? "profit" : "loss";
+          const boughtToday =
+            new Date(stock.buyDate).toDateString() === new Date().toDateString();
+          const basePrice        = safe(boughtToday ? avg : (stock.prevClose ?? avg), avg);
+          const dayValue         = price - basePrice;
+          const dayChangePercent = basePrice !== 0 ? (dayValue / basePrice) * 100 : 0;
+          const dayClass         = dayValue >= 0 ? "profit" : "loss";
 
           return (
-            <div key={index} className="border rounded px-3 py-1 mb-2">
-              <div className="d-flex justify-content-between text-muted small">
-                <span>Qty. {qty}</span>
-                {/* FIX: was stock.currentPrice.toFixed(2) — crashed on undefined */}
-                <span>LTP {price.toFixed(2)}</span>
-              </div>
-              <div className="fw-semibold mt-0">
-                {stock.symbol} <span className="text-muted small">NSE</span>
-              </div>
-              <div className="d-flex justify-content-between align-items-center mt-0">
-                <div className="text-muted small">₹{avg.toFixed(2)}</div>
-                <div className="text-end">
-                  <div className={`small ${dayclass}`}>
-                    {dayDiff.toFixed(2)}
-                  </div>
-                  <div className={`fw-semibold ${profClass}`}>
-                    {profit.toFixed(2)}
-                  </div>
+            <div key={index} className="border rounded px-3 py-2 mb-2">
+              {/* Row 1: Symbol + LTP */}
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="fw-semibold">
+                  {stock.displayName}
+                  <span className="text-muted small ms-1">NSE</span>
                 </div>
+                <div className="text-muted small">LTP {price.toFixed(2)}</div>
+              </div>
+
+              {/* Row 2: Qty + Avg price */}
+              <div className="d-flex justify-content-between text-muted small mt-1">
+                <span>Qty: {qty}</span>
+                <span>Avg: ₹{avg.toFixed(2)}</span>
+              </div>
+
+              {/* Row 3: Current value + P&L */}
+              <div className="d-flex justify-content-between small mt-1">
+                <span className="text-muted">Cur. Value: ₹{curValue.toFixed(2)}</span>
+                <span className={profClass}>
+                  P&L: {profit.toFixed(2)}
+                </span>
+              </div>
+
+              {/* Row 4: Net Gain + Day chg — same as desktop last two columns */}
+              <div className="d-flex justify-content-between small mt-1">
+                <span className={profClass}>
+                  Net: {perShareProfit.toFixed(2)} ({netprofitPercent.toFixed(2)}%)
+                </span>
+                <span className={dayClass}>
+                  Day: {dayValue.toFixed(2)} ({dayChangePercent.toFixed(2)}%)
+                </span>
               </div>
             </div>
           );
