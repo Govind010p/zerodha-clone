@@ -15,6 +15,7 @@ import ChatBox from "./deshboard_page/ChatBox";
 import "../src/assets/css/DeshboardPage.css";
 import "../src/assets/css/chat.css";
 import {X} from "lucide-react";
+import chatLogo from "../src/assets/images/5962463.png";
 
 export default function DashboardLayout() {
   const [ChatboxOpen, setCharboxOpen] = useState(false);
@@ -65,7 +66,7 @@ export default function DashboardLayout() {
           </div>
           <div className={ChatboxOpen ? "display-none-desktop" : ""} onClick={() => setCharboxOpen(true)}>
             <img
-              src="../src/assets/images/5962463.png"
+              src={chatLogo}
               alt="chatLogo"
               className="logo"
             />
