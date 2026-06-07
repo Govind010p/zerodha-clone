@@ -5,19 +5,15 @@
   width: 300px;
   padding: 28px 22px;
   border-radius: 10px;
-  z-index: 9999; /* VERY HIGH */
+  z-index: 1000 !important; 
 
   /* Sharp Gradient */
   background: rgb(148, 177, 192);
-
   box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
   transition: right 0.35s ease;
-  z-index: 999;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   /* Auto height */
   height: auto;
   min-height: 320px;
@@ -27,12 +23,10 @@
   right: 10px;
 }
 
-/* Header */
 .profile-header {
   text-align: center;
 }
 
-/* Avatar */
 .profile-avatar {
   width: 70px;
   height: 70px;
@@ -48,7 +42,6 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Text */
 .profile-username {
   font-size: 17px;
   font-weight: 600;
@@ -61,7 +54,6 @@
   margin-top: 4px;
 }
 
-/* Buttons */
 .sidebar-btn {
   width: 100%;
   padding: 12px;
@@ -74,7 +66,6 @@
   margin-top: 14px;
 }
 
-/* Blue Primary */
 .btn-blue {
   background: #1d4ed8;
   color: white;

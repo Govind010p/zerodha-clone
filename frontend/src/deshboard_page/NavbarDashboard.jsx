@@ -21,7 +21,7 @@ function NavbarDeshboard() {
         style={{
           backgroundColor: "#ffffff",
           width: "100%",
-          borderBottom: "1px solid #f0f0f0",
+          borderBottom: "1px solid #bcbcbc",
         }}
       >
         <div className="container px-3 px-md-0 w-md-75 px-md-4 d-flex align-content-between ">
