@@ -11,7 +11,7 @@ exports.getQty = async (req, res) => {
   try {
     const holding = await HoldingsModel.findOne({
       user: req.user.id,
-      symbol: req.params.uid,   // ✅ FIX
+      symbol: req.params.uid,  
     });
 
     res.json({ qty: holding ? holding.qty : 0 });

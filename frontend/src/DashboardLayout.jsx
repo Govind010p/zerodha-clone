@@ -14,7 +14,7 @@ import { GeneralContextProvider } from "../src/deshboard_page/GeneralContext";
 import ChatBox from "./deshboard_page/ChatBox";
 import "../src/assets/css/DeshboardPage.css";
 import "../src/assets/css/chat.css";
-import {X} from "lucide-react";
+import { X } from "lucide-react";
 import chatLogo from "../src/assets/images/5962463.png";
 
 export default function DashboardLayout() {
@@ -39,8 +39,8 @@ export default function DashboardLayout() {
           <div className="div navmobile-fixed">
             <NavMobile />
           </div>
-          <div className={`chat-box ${ChatboxOpen ? 'chat-box-open' : ''}`}>
-            <ChatBox />
+          <div className={`chat-box ${ChatboxOpen ? "chat-box-open" : ""}`}>
+              <ChatBox />
           </div>
           <div className=" page-content flex row">
             <div className={ChatboxOpen ? "div col-8" : "div"}>
@@ -64,17 +64,20 @@ export default function DashboardLayout() {
               </Routes>
             </div>
           </div>
-          <div className={ChatboxOpen ? "display-none-desktop" : ""} onClick={() => setCharboxOpen(true)}>
-            <img
-              src={chatLogo}
-              alt="chatLogo"
-              className="logo"
-            />
+          <div
+            className={ChatboxOpen ? "display-none-desktop" : ""}
+            onClick={() => setCharboxOpen(true)}
+          >
+            <img src={chatLogo} alt="chatLogo" className="logo" />
           </div>
-          <div className={ChatboxOpen ? "cross cross-open" : "display-none-desktop"}  onClick={()=>setCharboxOpen(false)}>
+          <div
+            className={
+              ChatboxOpen ? "cross cross-open" : "display-none-desktop"
+            }
+            onClick={() => setCharboxOpen(false)}
+          >
             <X></X>
           </div>
-          
         </div>
       </div>
     </div>

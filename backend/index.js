@@ -51,9 +51,11 @@ app.use("/api/auth", AuthRoutes);
 const orderRoutes = require("./Routes/orderRoutes");
 const holdingRoute = require("./Routes/holdingRoutes");
 const WatchlistRoute = require("./Routes/watchlistRoute");
+const chatRoute = require("./Routes/chatRoute");
 app.use("/api/orders", orderRoutes);
 app.use("/api/holding", holdingRoute);
 app.use("/api/watchlist", WatchlistRoute);
+app.use("/api/chat", chatRoute);
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({ status: "OK" });
