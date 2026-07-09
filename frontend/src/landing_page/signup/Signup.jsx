@@ -66,7 +66,7 @@ function Signup() {
           Open a free demat and trading account online
         </h2>
         <p className=" fs-7 text-muted text-md-center text-start fs-5 ms-md-0 ms-0 mt-md-2 mt-2 display-none-mobile">
-          Start investing brokerage free and join a community of 1.6+ crore
+          Start investing brokerage free and join a community of
           investors and traders
         </p>
       </div>
@@ -74,8 +74,10 @@ function Signup() {
         <div className="col-md-6 col-12">
           <img
             className="w-100 ps-md-5 py-md-5 p-2"
-            src="/media/images/signup.png"
+            src="/media/images/signup2.png"
             alt="signup png"
+            style={{scale: 1.2,}}
+           
           />
         </div>
         <div className="col-1"></div>
@@ -153,7 +155,7 @@ function Signup() {
             </div>
           </div>
           <p className="ms-md-0 ms-0 mt-md-4 mt-2 mb-1 px-md-0 px-3 text-muted fs-vs-p fs-10">
-            By proceeding, you agree to the Zerodha
+            By proceeding, you agree to the tradvise
             <span className="text-primary"> terms</span> &
             <span className="text-primary"> privacy policy</span>
           </p>

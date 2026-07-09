@@ -31,10 +31,10 @@ function Navbar() {
         <div className="container px-3 ps-md-5 ">
           <Link className="navbar-brand" to="/" onClick={closeNavbar}>
             <img
-              src="/media/images/logo.svg"
+              src="/media/images/logo.png"
               alt="logo"
               className="img-fluid"
-              style={{ maxWidth: "140px" }}
+              style={{ maxWidth: "20px", scale: 9, marginLeft: "270%" }}
             />
           </Link>
             <button

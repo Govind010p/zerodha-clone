@@ -9,14 +9,14 @@ function Univers() {
       <div className="row text-center">
         <h4 className="text-muted mb-5">
           Want to know more about our technology stack? Check out the{" "}
-          <span style={{ color: "#0a8ac5ff" }}>Zerodha.tech </span>blog.
+          <span style={{ color: "#0a8ac5ff" }}>tradvise.tech </span>blog.
         </h4>
-        <h2 className="mt-5">The Zerodha Universe</h2>
+        <h2 className="mt-5">The tradvise Universe</h2>
         <p className="ms-0">
           Extend your trading and investment experience even further with our
           partner platforms
         </p>
-        <div className="row ms-0">
+        {/* <div className="row ms-0">
           <div className="col-md-4 col-12 ">
             <div className="row mobile-bordered">
               <UniversTools
@@ -71,7 +71,7 @@ function Univers() {
               ></UniversTools>
             </div>
           </div>
-        </div>
+        </div> */}
         <button
           className="btn btn-primary btn btn-primary text-center w-50 w-auto px-md-5 px-4 py-md-2 py-2 mt-md-3 mt-5 "
           style={{ width: "20%", margin: "0 auto", fontSize: "1.15rem" }}

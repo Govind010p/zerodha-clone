@@ -29,7 +29,7 @@ function CreateTicket() {
             link5label="Glossary"
           ></Dropdown>
           <Dropdown
-            DrapdownTitle="Your Zerodha Account "
+            DrapdownTitle="Your tradvise Account "
             dropdownIcon={
               <i
                 class="fa fa-user-circle text-primary fs-md-1 fs-3 me-md-3 me-3"
@@ -48,7 +48,7 @@ function CreateTicket() {
             link5label="Transfer and conversion of securities"
           ></Dropdown>
           <Dropdown
-            DrapdownTitle="Kite"
+            DrapdownTitle="Trading Simulator"
             dropdownIcon={
               <i
                 class="fa fa-handshake-o text-primary fs-md-1 fs-2 me-md-3 me-3"
@@ -61,12 +61,12 @@ function CreateTicket() {
             link4="#"
             link5="#"
             link6="#"
-            link1label="IPO"
-            link2label="Trading FAQs"
-            link3label="Margin Trading Facility (MTF) and Margins"
-            link4label="Charts and orders"
-            link5label="Alerts and Nudges"
-            link6label="General"
+            link1label="Getting Started"
+            link2label="Virtual Buy & Sell Orders"
+            link3label="Watchlist Management"
+            link4label="Charts & Market Analysis"
+            link5label="Order History"
+            link6label="Trading FAQs"
           ></Dropdown>
           <Dropdown
             DrapdownTitle="&nbsp; Funds"
@@ -86,7 +86,7 @@ function CreateTicket() {
             link4label="eMandates"
           ></Dropdown>
           <Dropdown
-            DrapdownTitle="Console"
+            DrapdownTitle="Portfolio Dashboard"
             dropdownIcon={
               <i
                 class="fa fa-cogs text-primary fs-md-1 fs-2 me-md-3 me-3"
@@ -99,15 +99,15 @@ function CreateTicket() {
             link4="#"
             link5="#"
             link6="#"
-            link1label="Portfolio"
-            link2label="Corporate actions"
-            link3label="Funds statement"
-            link4label="Reports"
-            link5label="Profile"
-            link6label="Segments"
+            link1label="Portfolio Overview"
+            link2label="Performance Analytics"
+            link3label="Profit & Loss Reports"
+            link4label="Investment History"
+            link5label="Asset Allocation"
+            link6label="Portfolio Settings"
           ></Dropdown>
           <Dropdown
-            DrapdownTitle="Coin"
+            DrapdownTitle="Learning & AI Hub"
             dropdownIcon={
               <i
                 class="fa fa-circle-o-notch text-primary fs-md-1 fs-2 me-md-3 me-3"
@@ -119,11 +119,11 @@ function CreateTicket() {
             link3="#"
             link4="#"
             link5="#"
-            link1label="Mutual funds"
-            link2label="National Pension Scheme (NPS)"
-            link3label="Features on Coin"
-            link4label="Payments and Orders"
-            link5label="General"
+            link1label="Learning Modules"
+            link2label="Market Basics"
+            link3label="AI Investment Insights"
+            link4label="Trading Strategies"
+            link5label="Community Discussions"
           ></Dropdown>
         </div>
         <div className="col-md-4 px-md-4 px-3 py-md-4 py-5 text-start">
@@ -171,7 +171,7 @@ function CreateTicket() {
               </li>
               <li className="px-md-2 text-primary py-md-2 px-2 py-2">
                 <Link aria-current="page" to="#">
-                  Kite user manual
+                  tradvise user manual
                 </Link>
               </li>
               <li className="px-md-2 text-primary py-md-2 px-2 py-2">
@@ -184,8 +184,7 @@ function CreateTicket() {
         </div>
       </div>
       <div className="row px-md-4 mt-md-5 px-5">
-        <div className="col-12 border border-top-5">
-        </div>
+        <div className="col-12 border border-top-5"></div>
       </div>
     </div>
   );

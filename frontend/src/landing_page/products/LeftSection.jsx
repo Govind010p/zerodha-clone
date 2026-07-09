@@ -27,7 +27,7 @@ function LeftSection({
       <div className="row mobile-bordered mx-2 ">
         {!isMobile && (
           <div className="col-md-6 ms-md-5 p-md-0 p-2">
-            <img className="image" src={imageUrl} alt="product" />
+            <img className="image" src={imageUrl} alt="product" style={{maxWidth : "95%", borderRadius : "20px", marginTop: "20px"}} />
           </div>
         )}
         <div className="col-md-4 col-12 p-md-3 mt-md-3 mt-5">

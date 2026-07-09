@@ -9,11 +9,11 @@ function ProductPage() {
     <>
       <Hero></Hero>
       <LeftSection
-        imageUrl="/media/images/kite.png"
-        productName="Kite"
-        productDiscription="Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more. Enjoy the Kite experience seamlessly on your Android and iOS devices."
+        imageUrl="/media/images/markerAi.png"
+        productName="Real-Time Market Intelligence"
+        productDiscription="Stay connected to live stock prices through WebSocket-powered market updates. Monitor price movements, market trends, and trading activity with synchronized real-time data across the platform."
         Link1="/"
-        Link1name="Try Demo"
+        Link1name="Explore Market"
         Link2="/"
         Link2name="Learn more"
         googlePlay="#"
@@ -22,36 +22,36 @@ function ProductPage() {
 
       <RightSection
         imageUrl="/media/images/console.png"
-        productName="Console"
-        productDiscription="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
+        productName="Virtual Portfolio Management"
+        productDiscription="Build and manage virtual investment portfolios, track performance, analyze profits and losses, and gain meaningful insights through interactive analytics dashboards."
         Link="/"
         Linkname="Learn more"
       ></RightSection>
 
       <LeftSection
-        imageUrl="/media/images/coin.png"
-        productName="Coin"
-        productDiscription="Buy direct mutual funds online, commission-free, delivered directly to your Demat account. Enjoy the investment experience on your Android and iOS devices."
+        imageUrl="/media/images/Aichat.png"
+        productName="AI Investment Assistant"
+        productDiscription="Future-ready intelligent assistance that will provide market insights, trend analysis, portfolio recommendations, and personalized investment guidance using artificial intelligence."
         Link1="/"
-        Link1name="Coin"
+        Link1name="AI chat"
         googlePlay="#"
         appStore="#"
       ></LeftSection>
 
       <RightSection
         imageUrl="/media/images/kiteconnect.png"
-        productName="Kite Connect API"
+        productName="Connect API"
         productDiscription="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
         Link="/"
-        Linkname="Kite Connect "
+        Linkname="tradvise Connect "
       ></RightSection>
       <br />
       <br />
       <LeftSection
-        imageUrl={"/media/images/varsity.png"}
-        productName={"Varsity mobile"}
+        imageUrl={"/media/images/tech.png"}
+        productName={"Scalable Platform Architecture"}
         productDiscription={
-          "An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."
+          "Built using the MERN Stack with JWT authentication, Socket.io, WebSockets, and cloud deployment, delivering a secure, scalable, and high-performance trading simulation platform."
         }
       ></LeftSection>
 
