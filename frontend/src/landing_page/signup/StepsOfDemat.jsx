@@ -6,12 +6,12 @@ function StepsOfDemat() {
     <div className="div bg-gray py-md-5 py-5 text-md-center mt-md-5 mt-5 ">
       <div className="container pb-md-5">
         <h3 className="ms-md-0 ms-3 mb-md-2 mb-4 fw-medium fw-bolder ">
-          Steps to open a demat account with Zerodha
+          Steps to open a demat account with tradvise
         </h3>
         <div className="row px-md-5">
           <div className="col-md-6 col-12 ps-md-5 pe-md-5 ms-md-5 mt-md-5">
             <div className="div">
-              <img src="/media/images/tutorial.svg" alt="tutorial image " />
+              <img src="/media/images/tutorials2.png" alt="tutorial image " style={{width: "100%", borderRadius: "30px"}}/>
             </div>
           </div>
           <div className="col-md-5 col-12">

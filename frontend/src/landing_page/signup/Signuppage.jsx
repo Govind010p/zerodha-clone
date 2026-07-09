@@ -10,7 +10,7 @@ function Signuppage() {
     <>
       <Signup></Signup>
       <div className="container px-md-5 mt-md-0 mt-5 ">
-      <h3 className="text-md-center text-start px-md-0 ps-3 py-md-5 py-3 mt-md-5 mb-md-4 ">Investment options with Zerodha demat account</h3>
+      <h3 className="text-md-center text-start px-md-0 ps-3 py-md-5 py-3 mt-md-5 mb-md-4 ">Investment options with tradvise demat account</h3>
 
         <div className="row mx-md-0 mx-1">
           <div className="col-md-6 col-12">
