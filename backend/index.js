@@ -19,7 +19,7 @@ const server = http.createServer(app);
 // Socket Setup
 const io = new Server(server, {
   cors: {
-    origin: ["https://zerodha-clone-web.onrender.com", "http://localhost:5173"],
+    origin: ["https://zerodha-clone-web.onrender.com", "http://localhost:5173", "https://tradvise.onrender.com"],
     credentials: true,
   },
   transports: ["websocket", "polling"],
