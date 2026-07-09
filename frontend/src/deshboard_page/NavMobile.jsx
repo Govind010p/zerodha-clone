@@ -14,7 +14,7 @@ function NavMobile() {
               to="/tradvise"
               className="mobile-nav-item border border-primary fs-6 ms-2"
             >
-              Deshboard
+              Dashboard
             </Link>
             <Link
               to="/tradvise/holdings"
