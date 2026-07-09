@@ -14,7 +14,7 @@ function Footer() {
           <div className="col-lg-4 col-md-6">
 
             <img
-              src="../../public/media/images/logo.png"
+              src="/media/images/logo.png"
               alt="Tradvise Logo"
               style={{ width: "100px", scale:1.8 }}
               className="mb-3 ms-md-4"
