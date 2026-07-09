@@ -44,7 +44,7 @@ function Signup() {
         setFormData({ username: "", email: "", password: "" });
 
         // Redirect to dashboard
-        navigate("/kite", { replace: true });
+        navigate("/tradvise", { replace: true });
       } else {
         setSuccess(false);
         setMessage(data.message || "Signup failed");

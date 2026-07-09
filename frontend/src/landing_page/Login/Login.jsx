@@ -44,7 +44,7 @@ function Login() {
         sessionStorage.setItem("token", data.token);
 
         // Redirect to dashboard
-        navigate("/kite", { replace: true });
+        navigate("/tradvise", { replace: true });
       } else {
         setSuccess(false);
         setMessage(data.message || "Login failed");
