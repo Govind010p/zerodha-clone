@@ -28,7 +28,7 @@ function Navbar() {
           borderBottom: "1px solid #f0f0f0",
         }}
       >
-        <div className="container px-3 ps-md-5 ">
+        <div className="container px-3 ps-md-5">
           <Link className="navbar-brand" to="/" onClick={closeNavbar}>
             <img
               src="/media/images/logo.png"
@@ -91,7 +91,7 @@ function Navbar() {
               <li className="nav-item ">
                 <Link
                   className="nav-link ms-md-4  mt-md-0 ms-4 mt-2"
-                  to="/kite"
+                  to="/tradvise"
                   onClick={closeNavbar}
                   style={{ padding: "0" }}
                 >

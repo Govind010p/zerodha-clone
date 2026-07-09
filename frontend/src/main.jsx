@@ -37,7 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
 
         {/* Dashboard layout */}
-        <Route path="/kite/*" element={<DashboardLayout />} />
+        <Route path="/tradvise/*" element={<DashboardLayout />} />
 
         {/* 404 */}
         <Route path="*" element={<PageNotFound />} />

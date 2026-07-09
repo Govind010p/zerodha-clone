@@ -11,38 +11,38 @@ function NavMobile() {
         <div className="mobile-nav d-lg-none">
           <div className="mobile-nav-scroll mb-1">
             <Link
-              to="/kite"
+              to="/tradvise"
               className="mobile-nav-item border border-primary fs-6 ms-2"
             >
               Deshboard
             </Link>
             <Link
-              to="/kite/holdings"
+              to="/tradvise/holdings"
               className="mobile-nav-item border border-primary fs-6 "
             >
               Holdings
             </Link>
             <Link
-              to="/kite/orders"
+              to="/tradvise/orders"
               className="mobile-nav-item border border-primary fs-6 "
             >
               Orders
             </Link>
             <Link
-              to="/kite/positions"
+              to="/tradvise/positions"
               className="mobile-nav-item border border-primary fs-6 "
             >
               Positions
             </Link>
             <Link
-              to="/kite/funds"
+              to="/tradvise/funds"
               className="mobile-nav-item border border-primary fs-6"
             >
               Funds
             </Link>
             <Link
               className="mobile-nav-item border border-primary fs-6 me-3"
-              to="/kite/watchlist"
+              to="/tradvise/watchlist"
             >
               Your Watchlist
             </Link>

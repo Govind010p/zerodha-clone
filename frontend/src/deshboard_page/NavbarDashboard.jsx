@@ -26,7 +26,7 @@ function NavbarDeshboard() {
       >
         <div className="container px-3 px-md-0 w-md-75 px-md-4 d-flex align-content-between ">
           <div className="div d-flex flex-row">
-            <Link className="navbar-brand" to="/kite" onClick={closeNavbar}>
+            <Link className="navbar-brand" to="/tradvise" onClick={closeNavbar}>
               <img
                 src="/media/images/logo.png"
                 alt="logo"
@@ -51,7 +51,7 @@ function NavbarDeshboard() {
             <div className="div display-none-desktop display-on-mobile navbtn">
               <Link
                 className="mobile-nav-item border border-success fs-6 ms-2 disabled"
-                to="/kite/apps"
+                to="/tradvise/apps"
               >
                 Apps
               </Link>
@@ -71,14 +71,14 @@ function NavbarDeshboard() {
           >
             <ul className="navbar-nav ms-md-5 mb-2 mb-lg-0 px-md-3 py-md-1 w-75">
               <li className="nav-item px-md-3">
-                <Link className="nav-link" to="/kite" onClick={closeNavbar}>
+                <Link className="nav-link" to="/tradvise" onClick={closeNavbar}>
                   Dashboard
                 </Link>
               </li>
               <li className="nav-item  px-md-3">
                 <Link
                   className="nav-link"
-                  to="/kite/orders"
+                  to="/tradvise/orders"
                   onClick={closeNavbar}
                 >
                   Orders
@@ -87,7 +87,7 @@ function NavbarDeshboard() {
               <li className="nav-item px-md-3">
                 <Link
                   className="nav-link"
-                  to="/kite/holdings"
+                  to="/tradvise/holdings"
                   onClick={closeNavbar}
                 >
                   Holdings
@@ -96,7 +96,7 @@ function NavbarDeshboard() {
               <li className="nav-item  px-md-3">
                 <Link
                   className="nav-link"
-                  to="/kite/positions"
+                  to="/tradvise/positions"
                   onClick={closeNavbar}
                 >
                   Positions
@@ -105,7 +105,7 @@ function NavbarDeshboard() {
               <li className="nav-item px-md-3">
                 <Link
                   className="nav-link"
-                  to="/kite/funds"
+                  to="/tradvise/funds"
                   onClick={closeNavbar}
                 >
                   Funds
@@ -114,16 +114,16 @@ function NavbarDeshboard() {
               <li className="nav-item  px-md-3">
                 <Link
                   className="nav-link"
-                  to="/kite/apps"
+                  to="/tradvise/apps"
                   onClick={closeNavbar}
                 >
                   apps
                 </Link>
               </li>
-              <li className="nav-item px-md-3">
+              <li className="nav-item px-md-3 me-5">
                 <div>
                   <i
-                    className="fa fa-user-circle p-0 fs-3 mt-2  "
+                    className="fa fa-user-circle p-0 fs-3 mt-2"
                     aria-hidden="true"
                     onClick={() => setIsProfileOpen(true)}
                   ></i>
