@@ -6,7 +6,7 @@ function AboutPage() {
     return ( 
         <>
             <Hero></Hero>
-            <Team></Team>
+            {/* <Team></Team> */}
         </>
      );
 }

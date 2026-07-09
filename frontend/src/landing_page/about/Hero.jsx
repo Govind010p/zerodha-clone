@@ -1,56 +1,90 @@
 import React from "react";
-import '../../assets/css/about.css';
-import '../../assets/css/home.css';
+import "../../assets/css/about.css";
+import "../../assets/css/home.css";
 
 function Hero() {
   return (
-    <div className="container text-center">
-      <div className="row">
-        <div className="col-2"></div>
-        <div className="col-md-8 p-md-5 p-1 text-start ">
-          <h3 className="p-md-5 px-5 py-3">
-            We poineered the discount broking model in India. Now, we are
-            breaking ground with our technology.
+    <div className="container">
+
+      {/* Hero Heading */}
+
+      <div className="row justify-content-center text-center">
+
+        <div className="col-lg-9">
+
+          <h2 className="display-5 fw-bold mt-5">
+            Building the Future of Trading Education
+          </h2>
+
+          <p className="lead text-muted mt-4 mb-5 ms-0">
+            Tradvise combines modern web technologies, real-time market
+            integration, and intuitive user experiences to help aspiring
+            investors learn, practice, and analyze the stock market in a
+            completely risk-free environment.
+          </p>
+
+        </div>
+
+      </div>
+
+      <hr className="my-5" />
+
+      {/* About */}
+
+      <div className="row gy-5 mb-5">
+
+        <div className="col-lg-6 about-page-para">
+
+          <h3 className="mb-4">
+            Our Vision
           </h3>
-        </div>
-        <div className="col-2"></div>
-      </div>
-      <div
-        className="row border-top mb-5 text-center"
-        style={{
-          height: "1px",
-          backgroundColor: "grey",
-          width: "85%",
-          justifySelf: "center",
-        }}
-      ></div>
-      <div className="row mb-5 px-md-0 py-md-0 px-3">
-        <div className="col-1"></div>
-        <div className="col-md-5 col-12 me-md-1 px-md-1 py-md-0 px-3 py-1 ms-md-0  text-start about-page-para mobile-bordered">
-          <p className="ms-md-2 ms-0 p-md-0 p-3">
-            We kick-started operations on the 15th of August, 2010 with the goal
-            of breaking all barriers that traders and investors face in India in
-            terms of cost, support, and technology. We named the company
-            Zerodha, a combination of Zero and "Rodha", the Sanskrit word for
-            barrier. Today, our disruptive pricing models and in-house
-            technology have made us the biggest stock broker in India. Over 1.6+
-            crore clients place billions of orders every year through our
-            powerful ecosystem of investment platforms, contributing over 15% of
-            all Indian retail trading volumes.
+
+          <p className="ms-0">
+            Tradvise was developed as a Bachelor of Technology (Computer
+            Science & Engineering) major project with the vision of making
+            stock market learning more practical, interactive, and accessible.
+            Instead of relying only on theoretical concepts, users can
+            experience realistic trading simulations, monitor live market
+            movements, and understand portfolio management through a modern
+            digital platform.
           </p>
-        </div>
-        <div className="col-md-5 col-12 me-md-1 px-md-1 py-md-0 px-3 py-1 ms-md-0 mt-md-0 mt-3 text-start about-page-para mobile-bordered">
-          <p className="ms-md-2 ms-0">
-            In addition, we run a number of popular open online educational and
-            community initiatives to empower retail traders and investors.
-            Rainmatter, our fintech fund and incubator, has invested in several
-            fintech startups with the goal of growing the Indian capital
-            markets. And yet, we are always up to something new every day. Catch
-            up on the latest updates on our blog or see what the media is saying
-            about us or learn more about our business and product philosophies.
+
+          <p className="ms-0">
+            By combining real-time financial data with an intuitive user
+            interface, Tradvise bridges the gap between classroom learning and
+            real-world investing, enabling users to build confidence before
+            participating in actual financial markets.
           </p>
+
         </div>
+
+        <div className="col-lg-6 about-page-para">
+
+          <h3 className="mb-4">
+            Technology & Innovation
+          </h3>
+
+          <p className="ms-0">
+            The platform is built using the MERN Stack (MongoDB, Express.js,
+            React.js, and Node.js) with JWT authentication, Socket.io,
+            WebSockets, and REST APIs to deliver a fast, scalable, and secure
+            user experience. Live market updates, portfolio analytics, and
+            trading simulations work together to create an engaging financial
+            learning ecosystem.
+          </p>
+
+          <p className="ms-0">
+            Tradvise has been designed with future expansion in mind, including
+            AI-powered investment insights, predictive analytics, personalized
+            learning modules, and advanced portfolio optimization features.
+            Our mission is to create an intelligent platform where technology
+            empowers smarter financial decision-making.
+          </p>
+
+        </div>
+
       </div>
+
     </div>
   );
 }
